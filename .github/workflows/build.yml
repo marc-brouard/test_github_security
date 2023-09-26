@@ -33,6 +33,7 @@ jobs:
           image: "lhr.ocir.io/marcbrouard/oxfordmmm/clockwork_bcftools:latest"
           fail-build: false
       - name: upload Anchore Image scna SARIF report
+        permissions: write-all
         uses: github/codeql-action/upload-sarif@v2
         with:
           sarif_file: ${{ steps.imagescan.outputs.sarif }}
